@@ -59,5 +59,3 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python src_code/hosting/hosting.py
-
-```
