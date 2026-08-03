@@ -2,7 +2,7 @@ from huggingface_hub.utils import RepositoryNotFoundError, HfHubHTTPError
 from huggingface_hub import HfApi, create_repo
 import os
 
-repo_id = "naveenaggarwal1989/TourismPackagePredictor"
+repo_id = "naveenaggarwal1989/SuperKartSalesPredictor"
 repo_type = "space"
 
 api = HfApi(token=os.getenv("HF_TOKEN"))
