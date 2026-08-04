@@ -94,5 +94,5 @@ with st.form("Sales Estimation"):
 
         predicted_sales = model.predict(input_data)[0]
 
-        st.subheader("Prediction Result:")
-        st.success(f"The model predicts estimated sales of: **${predicted_sales:.2f}**")
+        st.subheader("Estimated Sale:")
+        st.success(f"Product ID {product_id} at {store_type} might generate **${predicted_sales:.2f}** revenue")
