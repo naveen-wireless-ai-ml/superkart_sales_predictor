@@ -8,12 +8,17 @@ from sklearn.model_selection import train_test_split
 # for converting text data in to numerical representation
 from sklearn.preprocessing import LabelEncoder
 # for hugging face space authentication to upload files
-from huggingface_hub import login, HfApi
+from huggingface_hub import login, HfApi, hf_hub_download
 
-# Define constants for the dataset and output paths
-api = HfApi(token=os.getenv("HF_TOKEN"))
-DATASET_PATH = "hf://datasets/naveenaggarwal1989/superkart-sales-data/SuperKart.csv"
-df = pd.read_csv(DATASET_PATH)
+# Log in to Hugging Face Hub
+login(token=os.getenv("HF_TOKEN"))
+
+# Download SuperKart.csv locally first
+data_filename = "SuperKart.csv"
+data_repo_id = "naveenaggarwal1989/superkart-sales-data"
+local_data_path = hf_hub_download(repo_id=data_repo_id, filename=data_filename, repo_type="dataset")
+
+df = pd.read_csv(local_data_path)
 print("Dataset loaded successfully.")
 
 # Drop the unique identifier and any unnamed columns
