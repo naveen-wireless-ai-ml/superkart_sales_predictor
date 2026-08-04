@@ -13,6 +13,9 @@ from huggingface_hub import login, HfApi, hf_hub_download
 # Log in to Hugging Face Hub
 login(token=os.getenv("HF_TOKEN"))
 
+# Define constants for the dataset and output paths
+api = HfApi(token=os.getenv("HF_TOKEN"))
+
 # Download SuperKart.csv locally first
 data_filename = "SuperKart.csv"
 data_repo_id = "naveenaggarwal1989/superkart-sales-data"
